@@ -1,0 +1,73 @@
+export const locales = ['es', 'en', 'fr', 'pt'] as const;
+export type Locale = (typeof locales)[number];
+
+export const dictionary = {
+  es: {
+    title: 'Alerta Diversa Américas',
+    subtitle: 'Registro seguro y visualización regional de crímenes de odio contra personas LGBTIQ+.',
+    report: 'Reportar un caso',
+    cases: 'Ver casos',
+    dashboard: 'Mapa regional',
+    intro: 'Documenta incidentes, preserva evidencia y habilita análisis multilingüe sin exponer datos sensibles.',
+    formTitle: 'Formulario de reporte',
+    location: 'Ubicación',
+    date: 'Fecha del incidente',
+    violenceType: 'Tipo de violencia',
+    description: 'Descripción',
+    contact: 'Contacto opcional',
+    submit: 'Enviar reporte',
+    recent: 'Casos registrados',
+  },
+  en: {
+    title: 'Alerta Diversa Americas',
+    subtitle: 'Secure reporting and regional visualization of hate crimes against LGBTIQ+ people.',
+    report: 'Report a case',
+    cases: 'View cases',
+    dashboard: 'Regional map',
+    intro: 'Document incidents, preserve evidence, and enable multilingual analysis without exposing sensitive data.',
+    formTitle: 'Report form',
+    location: 'Location',
+    date: 'Incident date',
+    violenceType: 'Type of violence',
+    description: 'Description',
+    contact: 'Optional contact',
+    submit: 'Submit report',
+    recent: 'Registered cases',
+  },
+  fr: {
+    title: 'Alerta Diversa Amériques',
+    subtitle: 'Signalement sécurisé et visualisation régionale des crimes haineux contre les personnes LGBTIQ+.',
+    report: 'Signaler un cas',
+    cases: 'Voir les cas',
+    dashboard: 'Carte régionale',
+    intro: 'Documenter les incidents, préserver les preuves et permettre une analyse multilingue sans exposer de données sensibles.',
+    formTitle: 'Formulaire de signalement',
+    location: 'Lieu',
+    date: 'Date de l’incident',
+    violenceType: 'Type de violence',
+    description: 'Description',
+    contact: 'Contact facultatif',
+    submit: 'Envoyer le signalement',
+    recent: 'Cas enregistrés',
+  },
+  pt: {
+    title: 'Alerta Diversa Américas',
+    subtitle: 'Registro seguro e visualização regional de crimes de ódio contra pessoas LGBTIQ+.',
+    report: 'Relatar um caso',
+    cases: 'Ver casos',
+    dashboard: 'Mapa regional',
+    intro: 'Documente incidentes, preserve evidências e permita análise multilíngue sem expor dados sensíveis.',
+    formTitle: 'Formulário de relato',
+    location: 'Localização',
+    date: 'Data do incidente',
+    violenceType: 'Tipo de violência',
+    description: 'Descrição',
+    contact: 'Contato opcional',
+    submit: 'Enviar relato',
+    recent: 'Casos registrados',
+  },
+} satisfies Record<Locale, Record<string, string>>;
+
+export function normalizeLocale(locale: string): Locale {
+  return locales.includes(locale as Locale) ? (locale as Locale) : 'es';
+}
